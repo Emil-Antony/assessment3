@@ -1,0 +1,28 @@
+Start auto log messages stack - Iteration 1.	[MsgId: MMSG-10545]
+Register.c(11): Found resource "https://demowebshop.tricentis.com/content/images/thumbs/0000172_build-your-own-cheap-computer_125.jpeg" in HTML "https://demowebshop.tricentis.com/"  	[MsgId: MMSG-26659]
+Register.c(11): Found resource "https://demowebshop.tricentis.com/content/images/thumbs/0000031_build-your-own-computer_125.jpeg" in HTML "https://demowebshop.tricentis.com/"  	[MsgId: MMSG-26659]
+Register.c(11): Found resource "https://demowebshop.tricentis.com/content/images/thumbs/0000201_build-your-own-expensive-computer_125.jpeg" in HTML "https://demowebshop.tricentis.com/"  	[MsgId: MMSG-26659]
+Register.c(11): Found resource "https://demowebshop.tricentis.com/content/images/thumbs/0000204_simple-computer_125.jpeg" in HTML "https://demowebshop.tricentis.com/"  	[MsgId: MMSG-26659]
+Register.c(11): Error -27720: Step download timeout (120 seconds) has expired when downloading resource "https://demowebshop.tricentis.com/content/images/thumbs/0000172_build-your-own-cheap-computer_125.jpeg". Set the "Step Timeout caused by resources is a warning" Runtime Setting to Yes/No to have this message as a warning/error, respectively  	[MsgId: MERR-27720]
+End auto log messages stack.	[MsgId: MMSG-10544]
+
+
+Start auto log messages stack - Iteration 6.	[MsgId: MMSG-10545]
+Register.c(11): Found resource "https://demowebshop.tricentis.com/content/images/thumbs/0000201_build-your-own-expensive-computer_125.jpeg" in HTML "https://demowebshop.tricentis.com/"  	[MsgId: MMSG-26659]
+Register.c(11): Found resource "https://demowebshop.tricentis.com/content/images/thumbs/0000204_simple-computer_125.jpeg" in HTML "https://demowebshop.tricentis.com/"  	[MsgId: MMSG-26659]
+Register.c(11): web_url("demowebshop.tricentis.com") was successful, 682413 body bytes, 10376 header bytes  	[MsgId: MMSG-26386]
+Register.c(31): web_link("Register") started  	[MsgId: MMSG-26355]
+Register.c(31): Linking to "https://demowebshop.tricentis.com/register", Target Frame=""  	[MsgId: MMSG-27994]
+Register.c(31): Error -27721: Step download timeout (120 seconds) has expired when downloading resource "https://demowebshop.tricentis.com/register"  	[MsgId: MERR-27721]
+End auto log messages stack.	[MsgId: MMSG-10544]
+
+
+Start auto log messages stack - Iteration 4.	[MsgId: MMSG-10545]
+addtocart.c(28): Found resource "https://demowebshop.tricentis.com/Scripts/public.accordion.js" in HTML "https://demowebshop.tricentis.com/onepagecheckout"  	[MsgId: MMSG-26659]
+addtocart.c(28): Found resource "https://demowebshop.tricentis.com/Scripts/public.onepagecheckout.js" in HTML "https://demowebshop.tricentis.com/onepagecheckout"  	[MsgId: MMSG-26659]
+addtocart.c(28): Resource "https://demowebshop.tricentis.com/Themes/DefaultClean/Content/images/logo.png" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+addtocart.c(28): Resource "https://demowebshop.tricentis.com/content/images/thumbs/0000224_141-inch-laptop_47.png" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+addtocart.c(28): Error -27721: Step download timeout (120 seconds) has expired when downloading resource "https://demowebshop.tricentis.com/onepagecheckout"  	[MsgId: MERR-27721]
+End auto log messages stack.	[MsgId: MMSG-10544]
+
+

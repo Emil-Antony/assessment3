@@ -1,0 +1,18 @@
+GET /cart HTTP/1.1
+Host: demowebshop.tricentis.com
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="113", "Chromium";v="113", "Not-A.Brand";v="24"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Referer: https://demowebshop.tricentis.com/notebooks
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+Cookie: ARRAffinity=aeff9384aa58dd80a06097da55d76e7a00364bf1f86c5304e8c691754ded5177; __RequestVerificationToken=PR6HsL5TwxwtJKa2nCUyiN7areSF-2yzMzY75t0NpRLO11_GDZiEsNChe9zZ1q72zLXA54oDFvdLXBEsQhhnuOPMlQR7Fa8Y42LFHYLZ4Sw1; ASP.NET_SessionId=qxm5nnojljtxpjzakpkezct1; NOPCOMMERCE.AUTH=F051477407A9987545688118D24C0EAB74ECFFA9328162685786D54E2672D36325BF91E4E7A7CFA4B64BCCBC6263F0DFDAF32B496F43AEC0AA9C5D43C7D6E41D3E5B2EE94E2A7361B33899EBF5777369BD5EACB518FC786C4AA1B45A8407BD4D98152017359755B6967CF4C1DC7FB99234AAC90C8AFD9401547D98332599C6AB; Nop.customer=45596bde-5372-47ca-8c87-b6b2fa28f978
+

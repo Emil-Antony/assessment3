@@ -1,0 +1,98 @@
+[
+    {
+        "actionName": "Register",
+        "steps": [
+            {
+                "stepId": "STEP12",
+                "stepName": "Url: demowebshop.tricentis.com",
+                "infFile": "t1.inf",
+                "time": 1765355225911
+            },
+            {
+                "stepId": "STEP13",
+                "stepName": "Link: Register",
+                "infFile": "t2.inf",
+                "time": 1765355226649
+            },
+            {
+                "stepId": "STEP14",
+                "stepName": "Submit Data: register",
+                "infFile": "t3.inf",
+                "time": 1765355227642
+            }
+        ],
+        "transactions": []
+    },
+    {
+        "actionName": "Login",
+        "steps": [
+            {
+                "stepId": "STEP15",
+                "stepName": "Url: login",
+                "infFile": "t4.inf",
+                "time": 1765355228211
+            },
+            {
+                "stepId": "STEP16",
+                "stepName": "Submit Data: login_2",
+                "infFile": "t5.inf",
+                "time": 1765355230609
+            },
+            {
+                "stepId": "STEP17",
+                "stepName": "Link: Computers",
+                "infFile": "t6.inf",
+                "time": 1765355231341
+            }
+        ],
+        "transactions": []
+    },
+    {
+        "actionName": "search",
+        "steps": [
+            {
+                "stepId": "STEP18",
+                "stepName": "Url: notebooks",
+                "infFile": "t7.inf",
+                "time": 1765355232676
+            },
+            {
+                "stepId": "STEP19",
+                "stepName": "Custom Request: 1",
+                "infFile": "t8.inf",
+                "time": 1765355233603
+            }
+        ],
+        "transactions": []
+    },
+    {
+        "actionName": "addtocart",
+        "steps": [
+            {
+                "stepId": "STEP20",
+                "stepName": "Url: cart",
+                "infFile": "t9.inf",
+                "time": 1765355234605
+            },
+            {
+                "stepId": "STEP21",
+                "stepName": "Submit Data: cart_2",
+                "infFile": "t10.inf",
+                "time": 1765355236163
+            }
+        ],
+        "transactions": []
+    },
+    {
+        "actionName": "logout",
+        "steps": [
+            {
+                "stepId": "STEP22",
+                "stepName": "Url: logout",
+                "infFile": "t11.inf",
+                "time": 1765355236988
+            }
+        ],
+        "transactions": []
+    }
+]

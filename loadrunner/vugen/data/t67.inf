@@ -1,0 +1,11 @@
+[t67]
+FileName1=t67_top-menu-background.png
+URL1=https://demowebshop.tricentis.com/Themes/DefaultClean/Content/images/top-menu-background.png
+Total=1
+ContentType=image/png
+SnapshotXmlFile=snapshot_67.xml
+RequestHeaderFile=t67_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t67_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

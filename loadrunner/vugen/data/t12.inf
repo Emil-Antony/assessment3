@@ -1,0 +1,15 @@
+[t12]
+FileName1=t12.json
+URL1=https://demowebshop.tricentis.com/addproducttocart/catalog/31/1/1
+Total=3
+RequestHeaderFile=t12_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t12_ResponseHeader.txt
+ContentType=application/json
+SnapshotXmlFile=snapshot_12.xml
+FileName2=t12_0000224_141-inch-laptop_47.png
+URL2=https://demowebshop.tricentis.com/content/images/thumbs/0000224_141-inch-laptop_47.png
+FileName3=t12_ico-close-notification-bar.png
+URL3=https://demowebshop.tricentis.com/Themes/DefaultClean/Content/images/ico-close-notification-bar.png
+[ProtocolInfo]
+ProtocolId=QTWeb

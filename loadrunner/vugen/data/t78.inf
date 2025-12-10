@@ -1,0 +1,15 @@
+[t78]
+FileName1=t78.htm
+URL1=https://demowebshop.tricentis.com/
+Total=3
+RequestHeaderFile=t78_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t78_ResponseHeader.txt
+ContentType=text/html
+SnapshotXmlFile=snapshot_78.xml
+FileName2=t78_top-menu-background.png
+URL2=https://demowebshop.tricentis.com/Themes/DefaultClean/Content/images/top-menu-background.png
+FileName3=t78_top-menu-list-image.png
+URL3=https://demowebshop.tricentis.com/Themes/DefaultClean/Content/images/top-menu-list-image.png
+[ProtocolInfo]
+ProtocolId=QTWeb

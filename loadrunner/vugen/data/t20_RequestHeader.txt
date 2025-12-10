@@ -1,0 +1,18 @@
+GET /logout HTTP/1.1
+Host: demowebshop.tricentis.com
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="113", "Chromium";v="113", "Not-A.Brand";v="24"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Referer: https://demowebshop.tricentis.com/registerresult/1
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+Cookie: Nop.customer=dd94b9f7-ce6c-4de2-b3e6-84025a064733; ARRAffinity=aeff9384aa58dd80a06097da55d76e7a00364bf1f86c5304e8c691754ded5177; __RequestVerificationToken=V-_Q8lO1eIv6dp9-qQX0Z10OaZO0bWVbPp3bCmHzMtrdkeaG8C2NbURYdOcS-6WCPuP7XiY7OJAfnNxefg9baIPxDuvokHMlAG4VW03AM5M1; NOPCOMMERCE.AUTH=8BDFD601E156EEBBAF3C60E916084C7DBE6F66E91E311B9BF121CCF070AB9AED4FC43B0D9304EF725FCD0725FF65CA6F366398D690164822B9347CAB1EC1C5B8EEC22B74B920CBCD5D015A064A81F8D6246D247F7992A9C72AC33D5DE0A438E9730DCA033B9D62B1D1099B3F92309336591DC471B32F91C28B3676948C6F1304
+

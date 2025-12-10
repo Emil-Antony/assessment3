@@ -1,0 +1,8 @@
+Start auto log messages stack - Iteration 4.	[MsgId: MMSG-10545]
+addtocart.c(28): Found resource "https://demowebshop.tricentis.com/Scripts/public.accordion.js" in HTML "https://demowebshop.tricentis.com/onepagecheckout"  	[MsgId: MMSG-26659]
+addtocart.c(28): Found resource "https://demowebshop.tricentis.com/Scripts/public.onepagecheckout.js" in HTML "https://demowebshop.tricentis.com/onepagecheckout"  	[MsgId: MMSG-26659]
+addtocart.c(28): Resource "https://demowebshop.tricentis.com/Themes/DefaultClean/Content/images/logo.png" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+addtocart.c(28): Resource "https://demowebshop.tricentis.com/content/images/thumbs/0000224_141-inch-laptop_47.png" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+addtocart.c(28): Error -27721: Step download timeout (120 seconds) has expired when downloading resource "https://demowebshop.tricentis.com/onepagecheckout"  	[MsgId: MERR-27721]
+End auto log messages stack.	[MsgId: MMSG-10544]
+

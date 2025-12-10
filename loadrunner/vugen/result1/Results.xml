@@ -1,0 +1,1211 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE Report
+[
+<!ELEMENT Report (General ,(Doc|BPT)) >
+<!ATTLIST Report ver CDATA #REQUIRED tmZone CDATA #REQUIRED>
+
+<!ELEMENT General ( DocLocation ) >
+<!ATTLIST General productName CDATA #REQUIRED productVer CDATA #REQUIRED os CDATA #REQUIRED host CDATA #REQUIRED qcserver CDATA #IMPLIED qcproject CDATA #IMPLIED SolManSolutionId CDATA #IMPLIED SolManProjectId CDATA #IMPLIED SolManTestPlanId CDATA #IMPLIED SolManTestPackageId CDATA #IMPLIED SolManUserInfoData CDATA #IMPLIED  >
+
+<!ELEMENT BPT (DName,Res,DVer?,TSet?,TInst?,NodeArgs,AdditionalInfo*,Doc*) >
+<!ATTLIST BPT rID ID #REQUIRED >
+
+<!ELEMENT Doc (DName,ConfName?,Res,DVer?,TSet?,TInst?,RunType?,DT?,AdditionalInfo*,Step*,DIter*,Step*,Action*,Doc*,Summary?,TestMaintenanceSummary*,NodeArgs?) >
+<!ATTLIST Doc rID ID #REQUIRED type (Test|BC|BPTWrapperTest|Flow|Group|Action) "Test" productName CDATA #REQUIRED BCIter CDATA #IMPLIED >
+
+<!ELEMENT RunType ( #PCDATA )>
+<!ATTLIST RunType fmStep (False|True) "False" batch (False|True) "False" upDesc (False|True) "False" upChk (False|True) "False" upAS (False|True) "False">
+
+<!ELEMENT DName ( #PCDATA ) >
+
+<!ELEMENT ConfName ( #PCDATA ) >
+
+<!ELEMENT Res ( #PCDATA ) >
+
+<!ELEMENT AdditionalInfo (AdditionalDataName,AdditionalDataValue ) >
+
+<!ELEMENT AdditionalDataName ( #PCDATA ) >
+
+<!ELEMENT AdditionalDataValue ( #PCDATA ) >
+
+<!ELEMENT DVer ( #PCDATA ) >
+
+<!ELEMENT TSet ( #PCDATA ) >
+
+<!ELEMENT TInst ( #PCDATA ) >
+
+<!ELEMENT DIter (Step*,Action+,Summary?,NodeArgs)>
+<!ATTLIST DIter rID ID #REQUIRED iterID CDATA #REQUIRED>
+
+<!ELEMENT DocLocation ( #PCDATA )>
+
+<!ELEMENT Action (AName,AIter*,(Step|HtmlStep|Action)*, Summary,ActionMaintenanceSummary*, NodeArgs ) >
+<!ATTLIST Action rID ID #REQUIRED>
+
+<!ELEMENT AIter ((Step|HtmlStep|Action)*,DataMapping?, Summary?,NodeArgs) >
+<!ATTLIST AIter rID ID #REQUIRED iterID CDATA #REQUIRED isCountable (False|True) "False" >
+
+<!ELEMENT AName ( #PCDATA ) >
+
+<!ELEMENT TestMaintenanceSummary (ActionMaintenanceSummary*) >
+<!ATTLIST TestMaintenanceSummary ObjectsAdded CDATA #REQUIRED ObjectsUpdated CDATA #REQUIRED StepsUpdated CDATA #REQUIRED StepsComments CDATA #REQUIRED><!ELEMENT ActionMaintenanceSummary (ObjectChange* ) >
+<!ATTLIST ActionMaintenanceSummary Action CDATA #REQUIRED Objects CDATA #REQUIRED Updated CDATA #REQUIRED LinesTotal CDATA #REQUIRED Added CDATA #REQUIRED LinesUpdated CDATA #REQUIRED>
+
+<!ELEMENT ObjectChange  (Hierarchy, PropertyChangeList* ) >
+<!ATTLIST ObjectChange Operation CDATA #IMPLIED OriginalRepository CDATA #IMPLIED>
+
+<!ELEMENT PropertyChangeList (PropertyDef*) >
+
+<!ELEMENT PropertyDef (OriginalValue, NewValue) >
+<!ATTLIST PropertyDef PropName CDATA #REQUIRED OriginRegularExpression (True|False) "False" NewRegularExpression (True|False) "False" AddedProperty (True|False) "False" >
+
+<!ELEMENT OriginalValue ( #PCDATA )>
+
+<!ELEMENT NewValue ( #PCDATA )>
+
+<!ELEMENT Hierarchy  (ObjectName, Hierarchy*) >
+<!ATTLIST Hierarchy MicClass CDATA #REQUIRED>
+
+<!ELEMENT ObjectName  ( #PCDATA ) >
+
+<!ELEMENT Step (Obj,Details,Time,TimeTick* ,(Step|HtmlStep|Doc)*, DataMapping?, NodeArgs) >
+<!ATTLIST Step rID ID #REQUIRED retval CDATA #IMPLIED>
+
+<!ELEMENT HtmlStep (HTML,TimeTick*,(Step|HtmlStep|Doc)*,NodeArgs) >
+<!ATTLIST HtmlStep rID ID #REQUIRED >
+
+<!ELEMENT Obj ( #PCDATA ) >
+<!ATTLIST Obj plainTxt (False|True) "True">
+
+<!ELEMENT Details ( #PCDATA ) >
+<!ATTLIST Details plainTxt (False|True) "True">
+
+<!ELEMENT Time ( #PCDATA ) >
+
+<!ELEMENT HTML ( #PCDATA ) >
+
+<!ELEMENT Disp ( #PCDATA ) >
+
+<!ELEMENT TimeTick ( #PCDATA ) >
+
+<!ELEMENT DataMapping ( DataMappedItem* )>
+<!ELEMENT DataMappedItem EMPTY >
+<!ATTLIST DataMappedItem dsName CDATA #REQUIRED >
+<!ATTLIST DataMappedItem rowId CDATA #REQUIRED >
+
+<!ELEMENT NodeArgs (Disp,TopPane?,BtmPane?,ExtendedInfo? )>
+<!ATTLIST NodeArgs eType CDATA #REQUIRED icon CDATA #REQUIRED nRep CDATA #REQUIRED UserNote CDATA #IMPLIED filter (False|True) "True">
+<!ATTLIST NodeArgs status (Passed|Failed|Done|Warning|Information) "Done">
+<!ATTLIST NodeArgs iconSel CDATA #IMPLIED nType CDATA #IMPLIED MovieMarker CDATA "">
+<!ATTLIST NodeArgs Source CDATA #IMPLIED SourceLine CDATA #IMPLIED StepFlowItemKey CDATA #IMPLIED >
+
+<!ELEMENT TopPane (Path)>
+
+<!ELEMENT BtmPane ( (Path|WR)?,ASHilite?)>
+<!ATTLIST BtmPane vType CDATA "HTML">
+
+<!ELEMENT Path ( #PCDATA ) >
+
+<!ELEMENT ASHilite ( #PCDATA ) >
+
+<!ELEMENT WR ( #PCDATA ) >
+
+<!ELEMENT ExtendedInfo ( StepData ) >
+
+<!ATTLIST ExtendedInfo StepType CDATA #REQUIRED>
+<!ELEMENT DT (NodeArgs) >
+<!ATTLIST DT rID ID #REQUIRED>
+
+<!ELEMENT Summary (Param*)>
+<!ATTLIST Summary sTime CDATA #IMPLIED eTime CDATA #IMPLIED passed CDATA #IMPLIED failed CDATA #IMPLIED warnings CDATA #IMPLIED retval CDATA #IMPLIED stopped (False|True) "False" >
+
+<!ELEMENT Param (ParamName,ParamVal)+ >
+<!ATTLIST Param paramInOut (In|Out) "In">
+
+<!ELEMENT ParamName ( #PCDATA ) >
+
+<!ELEMENT ParamVal ( #PCDATA ) >
+
+]
+>
+<Report ver="2.0" tmZone="India Standard Time">
+<General productName="Vugen" productVer="2023" os="" host="B8BA8B3224BB5FE"><DocLocation><![CDATA[D:\assessment3\assessment3\loadrunner\vugen]]></DocLocation></General>
+<Doc rID="T1"   productName= "Vugen"  >
+<DName><![CDATA[vugen]]></DName>
+<Res><![CDATA[result1]]></Res>
+<Action rID="T2">
+<AName><![CDATA[vuser_init]]></AName>
+<Summary sTime="10-12-2025 - 13:56:46" eTime="10-12-2025 - 13:56:46" passed="0" failed="0" warnings="0" ></Summary>
+<NodeArgs eType="StartAction" icon="2" nRep="5" >
+<Disp><![CDATA[vuser_init Summary]]></Disp>
+</NodeArgs>
+</Action>
+<DIter rID="T3" iterID="1" >
+<Action rID="T4">
+<AName><![CDATA[Register]]></AName>
+<Step rID="T5">
+<Obj plainTxt="False" ><![CDATA[Service: Set Sockets Option]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Set socket option <STRONG><FONT COLOR=#00AF00>SSL_VERSION</FONT></STRONG> with value <STRONG><FONT COLOR=#00AF00>AUTO</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:56:46]]></Time>
+<TimeTick>1765355206</TimeTick>
+<NodeArgs eType="General" icon="4" nRep="9" >
+<Disp><![CDATA[Service: Set Sockets Option]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T6">
+<Obj plainTxt="False" ><![CDATA[Service: Add Auto Header]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to all subsequent HTTP requests :<BR><STRONG><FONT COLOR=#00AF00>Accept-Language: en-US,en;q=0.9</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:56:46]]></Time>
+<TimeTick>1765355206</TimeTick>
+<NodeArgs eType="General" icon="5" nRep="10" >
+<Disp><![CDATA[Service: Add Auto Header]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T7">
+<Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>__utmb=78382081.3.10.1765354749; DOMAIN=demowebshop.tricentis.com</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:56:46]]></Time>
+<TimeTick>1765355206</TimeTick>
+<NodeArgs eType="General" icon="6" nRep="11" >
+<Disp><![CDATA[Service: Add Cookie]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T8">
+<Obj plainTxt="False" ><![CDATA[Url: demowebshop.tricentis.com]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:56:52]]></Time>
+<TimeTick>1765355212</TimeTick>
+<NodeArgs eType="General" icon="7" nRep="12" status="Passed" >
+<Disp><![CDATA[Url: demowebshop.tricentis.com]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration1\t1.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T9">
+<Obj plainTxt="False" ><![CDATA[Link: Register]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:56:52]]></Time>
+<TimeTick>1765355212</TimeTick>
+<NodeArgs eType="General" icon="8" nRep="13" status="Passed" >
+<Disp><![CDATA[Link: Register]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration1\t2.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T10">
+<Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>__utma=78382081.1076200954.1765354749.1765354749.1765354749.1; DOMAIN=demowebshop.tricentis.com</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:56:52]]></Time>
+<TimeTick>1765355212</TimeTick>
+<NodeArgs eType="General" icon="6" nRep="14" >
+<Disp><![CDATA[Service: Add Cookie]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T11">
+<Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>__utmc=78382081; DOMAIN=demowebshop.tricentis.com</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:56:52]]></Time>
+<TimeTick>1765355212</TimeTick>
+<NodeArgs eType="General" icon="6" nRep="15" >
+<Disp><![CDATA[Service: Add Cookie]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T12">
+<Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>__utmz=78382081.1765354749.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); DOMAIN=demowebshop.tricentis.com</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:56:52]]></Time>
+<TimeTick>1765355212</TimeTick>
+<NodeArgs eType="General" icon="6" nRep="16" >
+<Disp><![CDATA[Service: Add Cookie]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T13">
+<Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>__utmt=1; DOMAIN=demowebshop.tricentis.com</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:56:52]]></Time>
+<TimeTick>1765355212</TimeTick>
+<NodeArgs eType="General" icon="6" nRep="17" >
+<Disp><![CDATA[Service: Add Cookie]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T14">
+<Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>__utmb=78382081.1.10.1765354749; DOMAIN=demowebshop.tricentis.com</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:56:52]]></Time>
+<TimeTick>1765355212</TimeTick>
+<NodeArgs eType="General" icon="6" nRep="18" >
+<Disp><![CDATA[Service: Add Cookie]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T15">
+<Obj plainTxt="False" ><![CDATA[Submit Data: register]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:56:53]]></Time>
+<TimeTick>1765355213</TimeTick>
+<NodeArgs eType="General" icon="9" nRep="19" status="Passed" >
+<Disp><![CDATA[Submit Data: register]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration1\t3.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T16">
+<Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>__utmb=78382081.2.10.1765354749; DOMAIN=demowebshop.tricentis.com</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:56:53]]></Time>
+<TimeTick>1765355213</TimeTick>
+<NodeArgs eType="General" icon="6" nRep="20" >
+<Disp><![CDATA[Service: Add Cookie]]></Disp>
+</NodeArgs>
+</Step>
+<Summary sTime="10-12-2025 - 13:56:46" eTime="10-12-2025 - 13:56:53" passed="3" failed="0" warnings="0" ></Summary>
+<NodeArgs eType="StartAction" icon="2" nRep="8" status="Passed" >
+<Disp><![CDATA[Register Summary]]></Disp>
+</NodeArgs>
+</Action>
+<Action rID="T17">
+<AName><![CDATA[Login]]></AName>
+<Step rID="T18">
+<Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>__utmb=78382081.4.10.1765354749; DOMAIN=demowebshop.tricentis.com</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:56:53]]></Time>
+<TimeTick>1765355213</TimeTick>
+<NodeArgs eType="General" icon="6" nRep="23" >
+<Disp><![CDATA[Service: Add Cookie]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T19">
+<Obj plainTxt="False" ><![CDATA[Service: Add Auto Header]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to all subsequent HTTP requests :<BR><STRONG><FONT COLOR=#00AF00>Accept-Language: en-US,en;q=0.9</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:56:53]]></Time>
+<TimeTick>1765355213</TimeTick>
+<NodeArgs eType="General" icon="5" nRep="24" >
+<Disp><![CDATA[Service: Add Auto Header]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T20">
+<Obj plainTxt="False" ><![CDATA[Url: login]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:56:53]]></Time>
+<TimeTick>1765355213</TimeTick>
+<NodeArgs eType="General" icon="7" nRep="25" status="Passed" >
+<Disp><![CDATA[Url: login]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration1\t4.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T21">
+<Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>__utmb=78382081.5.10.1765354749; DOMAIN=demowebshop.tricentis.com</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:56:53]]></Time>
+<TimeTick>1765355213</TimeTick>
+<NodeArgs eType="General" icon="6" nRep="26" >
+<Disp><![CDATA[Service: Add Cookie]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T22">
+<Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>__utmb=78382081.6.10.1765354749; DOMAIN=demowebshop.tricentis.com</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:56:53]]></Time>
+<TimeTick>1765355213</TimeTick>
+<NodeArgs eType="General" icon="6" nRep="27" >
+<Disp><![CDATA[Service: Add Cookie]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T23">
+<Obj plainTxt="False" ><![CDATA[Submit Data: login_2]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:56:55]]></Time>
+<TimeTick>1765355215</TimeTick>
+<NodeArgs eType="General" icon="9" nRep="28" status="Passed" >
+<Disp><![CDATA[Submit Data: login_2]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration1\t5.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T24">
+<Obj plainTxt="False" ><![CDATA[Link: Computers]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:56:56]]></Time>
+<TimeTick>1765355216</TimeTick>
+<NodeArgs eType="General" icon="8" nRep="29" status="Passed" >
+<Disp><![CDATA[Link: Computers]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration1\t6.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Summary sTime="10-12-2025 - 13:56:53" eTime="10-12-2025 - 13:56:56" passed="3" failed="0" warnings="0" ></Summary>
+<NodeArgs eType="StartAction" icon="2" nRep="22" status="Passed" >
+<Disp><![CDATA[Login Summary]]></Disp>
+</NodeArgs>
+</Action>
+<Action rID="T25">
+<AName><![CDATA[search]]></AName>
+<Step rID="T26">
+<Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>__utmb=78382081.7.10.1765354749; DOMAIN=demowebshop.tricentis.com</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:56:56]]></Time>
+<TimeTick>1765355216</TimeTick>
+<NodeArgs eType="General" icon="6" nRep="32" >
+<Disp><![CDATA[Service: Add Cookie]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T27">
+<Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>__utmb=78382081.8.10.1765354749; DOMAIN=demowebshop.tricentis.com</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:56:56]]></Time>
+<TimeTick>1765355216</TimeTick>
+<NodeArgs eType="General" icon="6" nRep="33" >
+<Disp><![CDATA[Service: Add Cookie]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T28">
+<Obj plainTxt="False" ><![CDATA[Service: Add Auto Header]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to all subsequent HTTP requests :<BR><STRONG><FONT COLOR=#00AF00>Accept-Language: en-US,en;q=0.9</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:56:56]]></Time>
+<TimeTick>1765355216</TimeTick>
+<NodeArgs eType="General" icon="5" nRep="34" >
+<Disp><![CDATA[Service: Add Auto Header]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T29">
+<Obj plainTxt="False" ><![CDATA[Url: notebooks]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:56:56]]></Time>
+<TimeTick>1765355216</TimeTick>
+<NodeArgs eType="General" icon="7" nRep="35" status="Passed" >
+<Disp><![CDATA[Url: notebooks]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration1\t7.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T30">
+<Obj plainTxt="False" ><![CDATA[Custom Request: 1]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:56:57]]></Time>
+<TimeTick>1765355217</TimeTick>
+<NodeArgs eType="General" icon="10" nRep="36" status="Passed" >
+<Disp><![CDATA[Custom Request: 1]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration1\t8.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Summary sTime="10-12-2025 - 13:56:56" eTime="10-12-2025 - 13:56:57" passed="2" failed="0" warnings="0" ></Summary>
+<NodeArgs eType="StartAction" icon="2" nRep="31" status="Passed" >
+<Disp><![CDATA[search Summary]]></Disp>
+</NodeArgs>
+</Action>
+<Action rID="T31">
+<AName><![CDATA[addtocart]]></AName>
+<Step rID="T32">
+<Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>__utmb=78382081.9.10.1765354749; DOMAIN=demowebshop.tricentis.com</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:56:57]]></Time>
+<TimeTick>1765355217</TimeTick>
+<NodeArgs eType="General" icon="6" nRep="39" >
+<Disp><![CDATA[Service: Add Cookie]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T33">
+<Obj plainTxt="False" ><![CDATA[Service: Add Auto Header]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to all subsequent HTTP requests :<BR><STRONG><FONT COLOR=#00AF00>Accept-Language: en-US,en;q=0.9</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:56:57]]></Time>
+<TimeTick>1765355217</TimeTick>
+<NodeArgs eType="General" icon="5" nRep="40" >
+<Disp><![CDATA[Service: Add Auto Header]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T34">
+<Obj plainTxt="False" ><![CDATA[Url: cart]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:56:59]]></Time>
+<TimeTick>1765355219</TimeTick>
+<NodeArgs eType="General" icon="7" nRep="41" status="Passed" >
+<Disp><![CDATA[Url: cart]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration1\t9.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T35">
+<Obj plainTxt="False" ><![CDATA[Submit Data: cart_2]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:00]]></Time>
+<TimeTick>1765355220</TimeTick>
+<NodeArgs eType="General" icon="9" nRep="42" status="Passed" >
+<Disp><![CDATA[Submit Data: cart_2]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration1\t10.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Summary sTime="10-12-2025 - 13:56:57" eTime="10-12-2025 - 13:57:00" passed="2" failed="0" warnings="0" ></Summary>
+<NodeArgs eType="StartAction" icon="2" nRep="38" status="Passed" >
+<Disp><![CDATA[addtocart Summary]]></Disp>
+</NodeArgs>
+</Action>
+<Action rID="T36">
+<AName><![CDATA[logout]]></AName>
+<Step rID="T37">
+<Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>__utmb=78382081.10.10.1765354749; DOMAIN=demowebshop.tricentis.com</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:00]]></Time>
+<TimeTick>1765355220</TimeTick>
+<NodeArgs eType="General" icon="6" nRep="45" >
+<Disp><![CDATA[Service: Add Cookie]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T38">
+<Obj plainTxt="False" ><![CDATA[Service: Add Header]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to the next HTTP request :<BR><STRONG><FONT COLOR=#00AF00>Accept-Language: en-US,en;q=0.9</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:00]]></Time>
+<TimeTick>1765355220</TimeTick>
+<NodeArgs eType="General" icon="11" nRep="46" >
+<Disp><![CDATA[Service: Add Header]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T39">
+<Obj plainTxt="False" ><![CDATA[Url: logout]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:01]]></Time>
+<TimeTick>1765355221</TimeTick>
+<NodeArgs eType="General" icon="7" nRep="47" status="Passed" >
+<Disp><![CDATA[Url: logout]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration1\t11.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Summary sTime="10-12-2025 - 13:57:00" eTime="10-12-2025 - 13:57:01" passed="1" failed="0" warnings="0" ></Summary>
+<NodeArgs eType="StartAction" icon="2" nRep="44" status="Passed" >
+<Disp><![CDATA[logout Summary]]></Disp>
+</NodeArgs>
+</Action>
+<NodeArgs eType="StartIteration" icon="3" nRep="7" status="Passed" >
+<Disp><![CDATA[vugen Iteration 1 (Row 1)]]></Disp>
+</NodeArgs>
+</DIter>
+<DIter rID="T40" iterID="2" >
+<Action rID="T41">
+<AName><![CDATA[Register]]></AName>
+<Step rID="T42">
+<Obj plainTxt="False" ><![CDATA[Service: Set Sockets Option]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Set socket option <STRONG><FONT COLOR=#00AF00>SSL_VERSION</FONT></STRONG> with value <STRONG><FONT COLOR=#00AF00>AUTO</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:01]]></Time>
+<TimeTick>1765355221</TimeTick>
+<NodeArgs eType="General" icon="4" nRep="52" >
+<Disp><![CDATA[Service: Set Sockets Option]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T43">
+<Obj plainTxt="False" ><![CDATA[Service: Add Auto Header]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to all subsequent HTTP requests :<BR><STRONG><FONT COLOR=#00AF00>Accept-Language: en-US,en;q=0.9</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:01]]></Time>
+<TimeTick>1765355221</TimeTick>
+<NodeArgs eType="General" icon="5" nRep="53" >
+<Disp><![CDATA[Service: Add Auto Header]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T44">
+<Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>__utmb=78382081.3.10.1765354749; DOMAIN=demowebshop.tricentis.com</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:01]]></Time>
+<TimeTick>1765355221</TimeTick>
+<NodeArgs eType="General" icon="6" nRep="54" >
+<Disp><![CDATA[Service: Add Cookie]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T45">
+<Obj plainTxt="False" ><![CDATA[Url: demowebshop.tricentis.com]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:05]]></Time>
+<TimeTick>1765355225</TimeTick>
+<NodeArgs eType="General" icon="7" nRep="55" status="Passed" >
+<Disp><![CDATA[Url: demowebshop.tricentis.com]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration2\t1.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T46">
+<Obj plainTxt="False" ><![CDATA[Link: Register]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:06]]></Time>
+<TimeTick>1765355226</TimeTick>
+<NodeArgs eType="General" icon="8" nRep="56" status="Passed" >
+<Disp><![CDATA[Link: Register]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration2\t2.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T47">
+<Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>__utma=78382081.1076200954.1765354749.1765354749.1765354749.1; DOMAIN=demowebshop.tricentis.com</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:06]]></Time>
+<TimeTick>1765355226</TimeTick>
+<NodeArgs eType="General" icon="6" nRep="57" >
+<Disp><![CDATA[Service: Add Cookie]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T48">
+<Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>__utmc=78382081; DOMAIN=demowebshop.tricentis.com</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:06]]></Time>
+<TimeTick>1765355226</TimeTick>
+<NodeArgs eType="General" icon="6" nRep="58" >
+<Disp><![CDATA[Service: Add Cookie]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T49">
+<Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>__utmz=78382081.1765354749.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); DOMAIN=demowebshop.tricentis.com</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:06]]></Time>
+<TimeTick>1765355226</TimeTick>
+<NodeArgs eType="General" icon="6" nRep="59" >
+<Disp><![CDATA[Service: Add Cookie]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T50">
+<Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>__utmt=1; DOMAIN=demowebshop.tricentis.com</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:06]]></Time>
+<TimeTick>1765355226</TimeTick>
+<NodeArgs eType="General" icon="6" nRep="60" >
+<Disp><![CDATA[Service: Add Cookie]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T51">
+<Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>__utmb=78382081.1.10.1765354749; DOMAIN=demowebshop.tricentis.com</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:06]]></Time>
+<TimeTick>1765355226</TimeTick>
+<NodeArgs eType="General" icon="6" nRep="61" >
+<Disp><![CDATA[Service: Add Cookie]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T52">
+<Obj plainTxt="False" ><![CDATA[Submit Data: register]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:07]]></Time>
+<TimeTick>1765355227</TimeTick>
+<NodeArgs eType="General" icon="9" nRep="62" status="Passed" >
+<Disp><![CDATA[Submit Data: register]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration2\t3.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T53">
+<Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>__utmb=78382081.2.10.1765354749; DOMAIN=demowebshop.tricentis.com</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:07]]></Time>
+<TimeTick>1765355227</TimeTick>
+<NodeArgs eType="General" icon="6" nRep="63" >
+<Disp><![CDATA[Service: Add Cookie]]></Disp>
+</NodeArgs>
+</Step>
+<Summary sTime="10-12-2025 - 13:57:01" eTime="10-12-2025 - 13:57:07" passed="3" failed="0" warnings="0" ></Summary>
+<NodeArgs eType="StartAction" icon="2" nRep="51" status="Passed" >
+<Disp><![CDATA[Register Summary]]></Disp>
+</NodeArgs>
+</Action>
+<Action rID="T54">
+<AName><![CDATA[Login]]></AName>
+<Step rID="T55">
+<Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>__utmb=78382081.4.10.1765354749; DOMAIN=demowebshop.tricentis.com</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:07]]></Time>
+<TimeTick>1765355227</TimeTick>
+<NodeArgs eType="General" icon="6" nRep="66" >
+<Disp><![CDATA[Service: Add Cookie]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T56">
+<Obj plainTxt="False" ><![CDATA[Service: Add Auto Header]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to all subsequent HTTP requests :<BR><STRONG><FONT COLOR=#00AF00>Accept-Language: en-US,en;q=0.9</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:07]]></Time>
+<TimeTick>1765355227</TimeTick>
+<NodeArgs eType="General" icon="5" nRep="67" >
+<Disp><![CDATA[Service: Add Auto Header]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T57">
+<Obj plainTxt="False" ><![CDATA[Url: login]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:08]]></Time>
+<TimeTick>1765355228</TimeTick>
+<NodeArgs eType="General" icon="7" nRep="68" status="Passed" >
+<Disp><![CDATA[Url: login]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration2\t4.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T58">
+<Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>__utmb=78382081.5.10.1765354749; DOMAIN=demowebshop.tricentis.com</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:08]]></Time>
+<TimeTick>1765355228</TimeTick>
+<NodeArgs eType="General" icon="6" nRep="69" >
+<Disp><![CDATA[Service: Add Cookie]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T59">
+<Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>__utmb=78382081.6.10.1765354749; DOMAIN=demowebshop.tricentis.com</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:08]]></Time>
+<TimeTick>1765355228</TimeTick>
+<NodeArgs eType="General" icon="6" nRep="70" >
+<Disp><![CDATA[Service: Add Cookie]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T60">
+<Obj plainTxt="False" ><![CDATA[Submit Data: login_2]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:10]]></Time>
+<TimeTick>1765355230</TimeTick>
+<NodeArgs eType="General" icon="9" nRep="71" status="Passed" >
+<Disp><![CDATA[Submit Data: login_2]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration2\t5.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T61">
+<Obj plainTxt="False" ><![CDATA[Link: Computers]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:11]]></Time>
+<TimeTick>1765355231</TimeTick>
+<NodeArgs eType="General" icon="8" nRep="72" status="Passed" >
+<Disp><![CDATA[Link: Computers]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration2\t6.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Summary sTime="10-12-2025 - 13:57:07" eTime="10-12-2025 - 13:57:11" passed="3" failed="0" warnings="0" ></Summary>
+<NodeArgs eType="StartAction" icon="2" nRep="65" status="Passed" >
+<Disp><![CDATA[Login Summary]]></Disp>
+</NodeArgs>
+</Action>
+<Action rID="T62">
+<AName><![CDATA[search]]></AName>
+<Step rID="T63">
+<Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>__utmb=78382081.7.10.1765354749; DOMAIN=demowebshop.tricentis.com</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:11]]></Time>
+<TimeTick>1765355231</TimeTick>
+<NodeArgs eType="General" icon="6" nRep="75" >
+<Disp><![CDATA[Service: Add Cookie]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T64">
+<Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>__utmb=78382081.8.10.1765354749; DOMAIN=demowebshop.tricentis.com</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:11]]></Time>
+<TimeTick>1765355231</TimeTick>
+<NodeArgs eType="General" icon="6" nRep="76" >
+<Disp><![CDATA[Service: Add Cookie]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T65">
+<Obj plainTxt="False" ><![CDATA[Service: Add Auto Header]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to all subsequent HTTP requests :<BR><STRONG><FONT COLOR=#00AF00>Accept-Language: en-US,en;q=0.9</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:11]]></Time>
+<TimeTick>1765355231</TimeTick>
+<NodeArgs eType="General" icon="5" nRep="77" >
+<Disp><![CDATA[Service: Add Auto Header]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T66">
+<Obj plainTxt="False" ><![CDATA[Url: notebooks]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:12]]></Time>
+<TimeTick>1765355232</TimeTick>
+<NodeArgs eType="General" icon="7" nRep="78" status="Passed" >
+<Disp><![CDATA[Url: notebooks]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration2\t7.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T67">
+<Obj plainTxt="False" ><![CDATA[Custom Request: 1]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:13]]></Time>
+<TimeTick>1765355233</TimeTick>
+<NodeArgs eType="General" icon="10" nRep="79" status="Passed" >
+<Disp><![CDATA[Custom Request: 1]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration2\t8.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Summary sTime="10-12-2025 - 13:57:11" eTime="10-12-2025 - 13:57:13" passed="2" failed="0" warnings="0" ></Summary>
+<NodeArgs eType="StartAction" icon="2" nRep="74" status="Passed" >
+<Disp><![CDATA[search Summary]]></Disp>
+</NodeArgs>
+</Action>
+<Action rID="T68">
+<AName><![CDATA[addtocart]]></AName>
+<Step rID="T69">
+<Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>__utmb=78382081.9.10.1765354749; DOMAIN=demowebshop.tricentis.com</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:13]]></Time>
+<TimeTick>1765355233</TimeTick>
+<NodeArgs eType="General" icon="6" nRep="82" >
+<Disp><![CDATA[Service: Add Cookie]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T70">
+<Obj plainTxt="False" ><![CDATA[Service: Add Auto Header]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to all subsequent HTTP requests :<BR><STRONG><FONT COLOR=#00AF00>Accept-Language: en-US,en;q=0.9</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:13]]></Time>
+<TimeTick>1765355233</TimeTick>
+<NodeArgs eType="General" icon="5" nRep="83" >
+<Disp><![CDATA[Service: Add Auto Header]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T71">
+<Obj plainTxt="False" ><![CDATA[Url: cart]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:14]]></Time>
+<TimeTick>1765355234</TimeTick>
+<NodeArgs eType="General" icon="7" nRep="84" status="Passed" >
+<Disp><![CDATA[Url: cart]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration2\t9.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T72">
+<Obj plainTxt="False" ><![CDATA[Submit Data: cart_2]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:16]]></Time>
+<TimeTick>1765355236</TimeTick>
+<NodeArgs eType="General" icon="9" nRep="85" status="Passed" >
+<Disp><![CDATA[Submit Data: cart_2]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration2\t10.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Summary sTime="10-12-2025 - 13:57:13" eTime="10-12-2025 - 13:57:16" passed="2" failed="0" warnings="0" ></Summary>
+<NodeArgs eType="StartAction" icon="2" nRep="81" status="Passed" >
+<Disp><![CDATA[addtocart Summary]]></Disp>
+</NodeArgs>
+</Action>
+<Action rID="T73">
+<AName><![CDATA[logout]]></AName>
+<Step rID="T74">
+<Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>__utmb=78382081.10.10.1765354749; DOMAIN=demowebshop.tricentis.com</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:16]]></Time>
+<TimeTick>1765355236</TimeTick>
+<NodeArgs eType="General" icon="6" nRep="88" >
+<Disp><![CDATA[Service: Add Cookie]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T75">
+<Obj plainTxt="False" ><![CDATA[Service: Add Header]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to the next HTTP request :<BR><STRONG><FONT COLOR=#00AF00>Accept-Language: en-US,en;q=0.9</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:16]]></Time>
+<TimeTick>1765355236</TimeTick>
+<NodeArgs eType="General" icon="11" nRep="89" >
+<Disp><![CDATA[Service: Add Header]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T76">
+<Obj plainTxt="False" ><![CDATA[Url: logout]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:16]]></Time>
+<TimeTick>1765355236</TimeTick>
+<NodeArgs eType="General" icon="7" nRep="90" status="Passed" >
+<Disp><![CDATA[Url: logout]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration2\t11.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Summary sTime="10-12-2025 - 13:57:16" eTime="10-12-2025 - 13:57:17" passed="1" failed="0" warnings="0" ></Summary>
+<NodeArgs eType="StartAction" icon="2" nRep="87" status="Passed" >
+<Disp><![CDATA[logout Summary]]></Disp>
+</NodeArgs>
+</Action>
+<NodeArgs eType="StartIteration" icon="3" nRep="50" status="Passed" >
+<Disp><![CDATA[vugen Iteration 2 (Row 2)]]></Disp>
+</NodeArgs>
+</DIter>
+<DIter rID="T77" iterID="3" >
+<Action rID="T78">
+<AName><![CDATA[Register]]></AName>
+<Step rID="T79">
+<Obj plainTxt="False" ><![CDATA[Service: Set Sockets Option]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Set socket option <STRONG><FONT COLOR=#00AF00>SSL_VERSION</FONT></STRONG> with value <STRONG><FONT COLOR=#00AF00>AUTO</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:17]]></Time>
+<TimeTick>1765355237</TimeTick>
+<NodeArgs eType="General" icon="4" nRep="95" >
+<Disp><![CDATA[Service: Set Sockets Option]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T80">
+<Obj plainTxt="False" ><![CDATA[Service: Add Auto Header]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to all subsequent HTTP requests :<BR><STRONG><FONT COLOR=#00AF00>Accept-Language: en-US,en;q=0.9</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:17]]></Time>
+<TimeTick>1765355237</TimeTick>
+<NodeArgs eType="General" icon="5" nRep="96" >
+<Disp><![CDATA[Service: Add Auto Header]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T81">
+<Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>__utmb=78382081.3.10.1765354749; DOMAIN=demowebshop.tricentis.com</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:17]]></Time>
+<TimeTick>1765355237</TimeTick>
+<NodeArgs eType="General" icon="6" nRep="97" >
+<Disp><![CDATA[Service: Add Cookie]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T82">
+<Obj plainTxt="False" ><![CDATA[Url: demowebshop.tricentis.com]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:22]]></Time>
+<TimeTick>1765355242</TimeTick>
+<NodeArgs eType="General" icon="7" nRep="98" status="Passed" >
+<Disp><![CDATA[Url: demowebshop.tricentis.com]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration3\t1.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T83">
+<Obj plainTxt="False" ><![CDATA[Link: Register]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:22]]></Time>
+<TimeTick>1765355242</TimeTick>
+<NodeArgs eType="General" icon="8" nRep="99" status="Passed" >
+<Disp><![CDATA[Link: Register]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration3\t2.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T84">
+<Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>__utma=78382081.1076200954.1765354749.1765354749.1765354749.1; DOMAIN=demowebshop.tricentis.com</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:22]]></Time>
+<TimeTick>1765355242</TimeTick>
+<NodeArgs eType="General" icon="6" nRep="100" >
+<Disp><![CDATA[Service: Add Cookie]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T85">
+<Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>__utmc=78382081; DOMAIN=demowebshop.tricentis.com</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:22]]></Time>
+<TimeTick>1765355242</TimeTick>
+<NodeArgs eType="General" icon="6" nRep="101" >
+<Disp><![CDATA[Service: Add Cookie]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T86">
+<Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>__utmz=78382081.1765354749.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); DOMAIN=demowebshop.tricentis.com</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:22]]></Time>
+<TimeTick>1765355242</TimeTick>
+<NodeArgs eType="General" icon="6" nRep="102" >
+<Disp><![CDATA[Service: Add Cookie]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T87">
+<Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>__utmt=1; DOMAIN=demowebshop.tricentis.com</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:22]]></Time>
+<TimeTick>1765355242</TimeTick>
+<NodeArgs eType="General" icon="6" nRep="103" >
+<Disp><![CDATA[Service: Add Cookie]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T88">
+<Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>__utmb=78382081.1.10.1765354749; DOMAIN=demowebshop.tricentis.com</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:22]]></Time>
+<TimeTick>1765355242</TimeTick>
+<NodeArgs eType="General" icon="6" nRep="104" >
+<Disp><![CDATA[Service: Add Cookie]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T89">
+<Obj plainTxt="False" ><![CDATA[Submit Data: register]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:23]]></Time>
+<TimeTick>1765355243</TimeTick>
+<NodeArgs eType="General" icon="9" nRep="105" status="Passed" >
+<Disp><![CDATA[Submit Data: register]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration3\t3.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T90">
+<Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>__utmb=78382081.2.10.1765354749; DOMAIN=demowebshop.tricentis.com</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:23]]></Time>
+<TimeTick>1765355243</TimeTick>
+<NodeArgs eType="General" icon="6" nRep="106" >
+<Disp><![CDATA[Service: Add Cookie]]></Disp>
+</NodeArgs>
+</Step>
+<Summary sTime="10-12-2025 - 13:57:17" eTime="10-12-2025 - 13:57:23" passed="3" failed="0" warnings="0" ></Summary>
+<NodeArgs eType="StartAction" icon="2" nRep="94" status="Passed" >
+<Disp><![CDATA[Register Summary]]></Disp>
+</NodeArgs>
+</Action>
+<Action rID="T91">
+<AName><![CDATA[Login]]></AName>
+<Step rID="T92">
+<Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>__utmb=78382081.4.10.1765354749; DOMAIN=demowebshop.tricentis.com</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:23]]></Time>
+<TimeTick>1765355243</TimeTick>
+<NodeArgs eType="General" icon="6" nRep="109" >
+<Disp><![CDATA[Service: Add Cookie]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T93">
+<Obj plainTxt="False" ><![CDATA[Service: Add Auto Header]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to all subsequent HTTP requests :<BR><STRONG><FONT COLOR=#00AF00>Accept-Language: en-US,en;q=0.9</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:23]]></Time>
+<TimeTick>1765355243</TimeTick>
+<NodeArgs eType="General" icon="5" nRep="110" >
+<Disp><![CDATA[Service: Add Auto Header]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T94">
+<Obj plainTxt="False" ><![CDATA[Url: login]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:23]]></Time>
+<TimeTick>1765355243</TimeTick>
+<NodeArgs eType="General" icon="7" nRep="111" status="Passed" >
+<Disp><![CDATA[Url: login]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration3\t4.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T95">
+<Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>__utmb=78382081.5.10.1765354749; DOMAIN=demowebshop.tricentis.com</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:23]]></Time>
+<TimeTick>1765355243</TimeTick>
+<NodeArgs eType="General" icon="6" nRep="112" >
+<Disp><![CDATA[Service: Add Cookie]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T96">
+<Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>__utmb=78382081.6.10.1765354749; DOMAIN=demowebshop.tricentis.com</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:23]]></Time>
+<TimeTick>1765355243</TimeTick>
+<NodeArgs eType="General" icon="6" nRep="113" >
+<Disp><![CDATA[Service: Add Cookie]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T97">
+<Obj plainTxt="False" ><![CDATA[Submit Data: login_2]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:24]]></Time>
+<TimeTick>1765355244</TimeTick>
+<NodeArgs eType="General" icon="9" nRep="114" status="Passed" >
+<Disp><![CDATA[Submit Data: login_2]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration3\t5.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T98">
+<Obj plainTxt="False" ><![CDATA[Link: Computers]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:27]]></Time>
+<TimeTick>1765355247</TimeTick>
+<NodeArgs eType="General" icon="8" nRep="115" status="Passed" >
+<Disp><![CDATA[Link: Computers]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration3\t6.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Summary sTime="10-12-2025 - 13:57:23" eTime="10-12-2025 - 13:57:27" passed="3" failed="0" warnings="0" ></Summary>
+<NodeArgs eType="StartAction" icon="2" nRep="108" status="Passed" >
+<Disp><![CDATA[Login Summary]]></Disp>
+</NodeArgs>
+</Action>
+<Action rID="T99">
+<AName><![CDATA[search]]></AName>
+<Step rID="T100">
+<Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>__utmb=78382081.7.10.1765354749; DOMAIN=demowebshop.tricentis.com</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:27]]></Time>
+<TimeTick>1765355247</TimeTick>
+<NodeArgs eType="General" icon="6" nRep="118" >
+<Disp><![CDATA[Service: Add Cookie]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T101">
+<Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>__utmb=78382081.8.10.1765354749; DOMAIN=demowebshop.tricentis.com</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:27]]></Time>
+<TimeTick>1765355247</TimeTick>
+<NodeArgs eType="General" icon="6" nRep="119" >
+<Disp><![CDATA[Service: Add Cookie]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T102">
+<Obj plainTxt="False" ><![CDATA[Service: Add Auto Header]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to all subsequent HTTP requests :<BR><STRONG><FONT COLOR=#00AF00>Accept-Language: en-US,en;q=0.9</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:27]]></Time>
+<TimeTick>1765355247</TimeTick>
+<NodeArgs eType="General" icon="5" nRep="120" >
+<Disp><![CDATA[Service: Add Auto Header]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T103">
+<Obj plainTxt="False" ><![CDATA[Url: notebooks]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:28]]></Time>
+<TimeTick>1765355248</TimeTick>
+<NodeArgs eType="General" icon="7" nRep="121" status="Passed" >
+<Disp><![CDATA[Url: notebooks]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration3\t7.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T104">
+<Obj plainTxt="False" ><![CDATA[Custom Request: 1]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:29]]></Time>
+<TimeTick>1765355249</TimeTick>
+<NodeArgs eType="General" icon="10" nRep="122" status="Passed" >
+<Disp><![CDATA[Custom Request: 1]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration3\t8.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Summary sTime="10-12-2025 - 13:57:27" eTime="10-12-2025 - 13:57:29" passed="2" failed="0" warnings="0" ></Summary>
+<NodeArgs eType="StartAction" icon="2" nRep="117" status="Passed" >
+<Disp><![CDATA[search Summary]]></Disp>
+</NodeArgs>
+</Action>
+<Action rID="T105">
+<AName><![CDATA[addtocart]]></AName>
+<Step rID="T106">
+<Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>__utmb=78382081.9.10.1765354749; DOMAIN=demowebshop.tricentis.com</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:29]]></Time>
+<TimeTick>1765355249</TimeTick>
+<NodeArgs eType="General" icon="6" nRep="125" >
+<Disp><![CDATA[Service: Add Cookie]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T107">
+<Obj plainTxt="False" ><![CDATA[Service: Add Auto Header]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to all subsequent HTTP requests :<BR><STRONG><FONT COLOR=#00AF00>Accept-Language: en-US,en;q=0.9</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:29]]></Time>
+<TimeTick>1765355249</TimeTick>
+<NodeArgs eType="General" icon="5" nRep="126" >
+<Disp><![CDATA[Service: Add Auto Header]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T108">
+<Obj plainTxt="False" ><![CDATA[Url: cart]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:31]]></Time>
+<TimeTick>1765355251</TimeTick>
+<NodeArgs eType="General" icon="7" nRep="127" status="Passed" >
+<Disp><![CDATA[Url: cart]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration3\t9.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T109">
+<Obj plainTxt="False" ><![CDATA[Submit Data: cart_2]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:31]]></Time>
+<TimeTick>1765355251</TimeTick>
+<NodeArgs eType="General" icon="9" nRep="128" status="Passed" >
+<Disp><![CDATA[Submit Data: cart_2]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration3\t10.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Summary sTime="10-12-2025 - 13:57:29" eTime="10-12-2025 - 13:57:31" passed="2" failed="0" warnings="0" ></Summary>
+<NodeArgs eType="StartAction" icon="2" nRep="124" status="Passed" >
+<Disp><![CDATA[addtocart Summary]]></Disp>
+</NodeArgs>
+</Action>
+<Action rID="T110">
+<AName><![CDATA[logout]]></AName>
+<Step rID="T111">
+<Obj plainTxt="False" ><![CDATA[Service: Add Cookie]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following cookie: <STRONG><FONT COLOR=#00AF00>__utmb=78382081.10.10.1765354749; DOMAIN=demowebshop.tricentis.com</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:31]]></Time>
+<TimeTick>1765355251</TimeTick>
+<NodeArgs eType="General" icon="6" nRep="131" >
+<Disp><![CDATA[Service: Add Cookie]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T112">
+<Obj plainTxt="False" ><![CDATA[Service: Add Header]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER>Add the following header to the next HTTP request :<BR><STRONG><FONT COLOR=#00AF00>Accept-Language: en-US,en;q=0.9</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:31]]></Time>
+<TimeTick>1765355251</TimeTick>
+<NodeArgs eType="General" icon="11" nRep="132" >
+<Disp><![CDATA[Service: Add Header]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T113">
+<Obj plainTxt="False" ><![CDATA[Url: logout]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[10-12-2025 - 13:57:32]]></Time>
+<TimeTick>1765355252</TimeTick>
+<NodeArgs eType="General" icon="7" nRep="133" status="Passed" >
+<Disp><![CDATA[Url: logout]]></Disp>
+<BtmPane vType="HTMLSNSH" >
+<Path><![CDATA[\Iteration3\t11.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Summary sTime="10-12-2025 - 13:57:31" eTime="10-12-2025 - 13:57:32" passed="1" failed="0" warnings="0" ></Summary>
+<NodeArgs eType="StartAction" icon="2" nRep="130" status="Passed" >
+<Disp><![CDATA[logout Summary]]></Disp>
+</NodeArgs>
+</Action>
+<NodeArgs eType="StartIteration" icon="3" nRep="93" status="Passed" >
+<Disp><![CDATA[vugen Iteration 3 (Row 3)]]></Disp>
+</NodeArgs>
+</DIter>
+<Action rID="T114">
+<AName><![CDATA[vuser_end]]></AName>
+<Summary sTime="10-12-2025 - 13:57:32" eTime="10-12-2025 - 13:57:32" passed="0" failed="0" warnings="0" ></Summary>
+<NodeArgs eType="StartAction" icon="2" nRep="136" >
+<Disp><![CDATA[vuser_end Summary]]></Disp>
+</NodeArgs>
+</Action>
+<Summary sTime="10-12-2025 - 13:56:46" eTime="10-12-2025 - 13:57:32" passed="33" failed="0" warnings="0" ></Summary>
+<NodeArgs eType="StartTest" icon="1" nRep="4" status="Passed" >
+<Disp><![CDATA[Test vugen Summary]]></Disp>
+</NodeArgs>
+</Doc>
+</Report>

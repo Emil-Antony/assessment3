@@ -1,0 +1,18 @@
+GET /logout HTTP/1.1
+Host: demowebshop.tricentis.com
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="113", "Chromium";v="113", "Not-A.Brand";v="24"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Referer: https://demowebshop.tricentis.com/onepagecheckout
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+Cookie: ARRAffinity=aeff9384aa58dd80a06097da55d76e7a00364bf1f86c5304e8c691754ded5177; __RequestVerificationToken=V-_Q8lO1eIv6dp9-qQX0Z10OaZO0bWVbPp3bCmHzMtrdkeaG8C2NbURYdOcS-6WCPuP7XiY7OJAfnNxefg9baIPxDuvokHMlAG4VW03AM5M1; ASP.NET_SessionId=klbskytm4qzjnfg2xlv1hprk; NOPCOMMERCE.AUTH=3F8B592451A4B3215B7A4735EB92D136E91B941D04F5F149AB4FC5B2923715F6BDDF76367D6255A5A09C188F5AF1738285C295CA0C2AF61E37D6D016F927D51F1615C0F01B9FC1FA693508895C7EF12038E7765BAC94B80478258D85D0E5F12F8EBF457AA498062606C8182189370244462882B07D3244BA4DE260D4ACA0A6EA; Nop.customer=dd94b9f7-ce6c-4de2-b3e6-84025a064733; __utma=78382081.212827302.1765353909.1765353909.1765353909.1; __utmc=78382081; __utmz=78382081.1765353909.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); __utmt=1; __utmb=78382081.3.10.1765353909
+

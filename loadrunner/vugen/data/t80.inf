@@ -1,0 +1,15 @@
+[t80]
+FileName1=t80.htm
+URL1=https://demowebshop.tricentis.com/notebooks
+Total=3
+RequestHeaderFile=t80_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t80_ResponseHeader.txt
+ContentType=text/html
+SnapshotXmlFile=snapshot_80.xml
+FileName2=t80_ico-arrow-r.gif
+URL2=https://demowebshop.tricentis.com/Themes/DefaultClean/Content/images/ico-arrow-r.gif
+FileName3=t80_ajax_loader_large.gif
+URL3=https://demowebshop.tricentis.com/Themes/DefaultClean/Content/images/ajax_loader_large.gif
+[ProtocolInfo]
+ProtocolId=QTWeb

@@ -1,0 +1,11 @@
+[t55]
+FileName1=t55_star-x-inactive.png
+URL1=https://demowebshop.tricentis.com/Themes/DefaultClean/Content/images/star-x-inactive.png
+Total=1
+ContentType=image/png
+SnapshotXmlFile=snapshot_55.xml
+RequestHeaderFile=t55_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t55_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

@@ -1,0 +1,10 @@
+GET /cart HTTP/1.1
+Referer: https://demowebshop.tricentis.com/notebooks
+Accept-Language: en-US,en;q=0.9
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: Keep-Alive
+Host: demowebshop.tricentis.com
+Cookie: __utmb=78382081.9.10.1765354749; Nop.customer=bc781d7a-3728-4e55-83e9-b3aa3d4af030; ARRAffinity=aeff9384aa58dd80a06097da55d76e7a00364bf1f86c5304e8c691754ded5177; __RequestVerificationToken=XCIXkcfcj2vnt2guAoqFDlzXfDq6peJOOpHg01NwtLbeekMztaFDZ4q5LS9gfWiewrFsn13UjR2ffhOi0ZtyDmkvLh5YQzjtm4xxq5h487o1; __utma=78382081.1076200954.1765354749.1765354749.1765354749.1; __utmc=78382081; __utmz=78382081.1765354749.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); __utmt=1
+

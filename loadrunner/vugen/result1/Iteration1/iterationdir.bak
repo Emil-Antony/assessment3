@@ -1,0 +1,10 @@
+[vuser_init]
+SnapshotIndex=I1_vuser_init
+[search]
+SnapshotIndex=I1_search
+[Register]
+SnapshotIndex=I1_Register
+[addtocart]
+SnapshotIndex=I1_addtocart
+[Login]
+SnapshotIndex=I1_Login

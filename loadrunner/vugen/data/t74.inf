@@ -1,0 +1,11 @@
+[t74]
+FileName1=t74.htm
+URL1=https://demowebshop.tricentis.com/registerresult/1
+Total=1
+RequestHeaderFile=t74_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t74_ResponseHeader.txt
+ContentType=text/html
+SnapshotXmlFile=snapshot_74.xml
+[ProtocolInfo]
+ProtocolId=QTWeb

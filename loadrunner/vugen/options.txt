@@ -1,0 +1,9 @@
+-+
+-DCCI
+-D_IDA_XL
+-DWINNT
+-ID:\assessment3\assessment3\loadrunner\vugen
+-IC:\Program Files (x86)\Micro Focus\LoadRunner\include
+-ed:\assessment3\assessment3\loadrunner\vugen\\logfile.log
+d:\assessment3\assessment3\loadrunner\vugen\\combined_vugen.c
+d:\assessment3\assessment3\loadrunner\vugen\\pre_cci.c

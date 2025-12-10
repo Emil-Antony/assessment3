@@ -1,0 +1,9 @@
+Start auto log messages stack - Iteration 3.	[MsgId: MMSG-10545]
+Register.c(11): Found resource "https://demowebshop.tricentis.com/content/images/thumbs/0000172_build-your-own-cheap-computer_125.jpeg" in HTML "https://demowebshop.tricentis.com/"  	[MsgId: MMSG-26659]
+Register.c(11): Found resource "https://demowebshop.tricentis.com/content/images/thumbs/0000031_build-your-own-computer_125.jpeg" in HTML "https://demowebshop.tricentis.com/"  	[MsgId: MMSG-26659]
+Register.c(11): Found resource "https://demowebshop.tricentis.com/content/images/thumbs/0000201_build-your-own-expensive-computer_125.jpeg" in HTML "https://demowebshop.tricentis.com/"  	[MsgId: MMSG-26659]
+Register.c(11): Found resource "https://demowebshop.tricentis.com/content/images/thumbs/0000204_simple-computer_125.jpeg" in HTML "https://demowebshop.tricentis.com/"  	[MsgId: MMSG-26659]
+Register.c(11): Error -27720: Step download timeout (120 seconds) has expired when downloading resource "https://demowebshop.tricentis.com/Scripts/jquery-1.10.2.min.js". Set the "Step Timeout caused by resources is a warning" Runtime Setting to Yes/No to have this message as a warning/error, respectively  	[MsgId: MERR-27720]
+End auto log messages stack.	[MsgId: MMSG-10544]
+
+

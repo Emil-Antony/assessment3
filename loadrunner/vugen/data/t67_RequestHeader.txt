@@ -1,0 +1,16 @@
+GET /Themes/DefaultClean/Content/images/top-menu-background.png HTTP/1.1
+Host: demowebshop.tricentis.com
+Connection: keep-alive
+sec-ch-ua: "Google Chrome";v="113", "Chromium";v="113", "Not-A.Brand";v="24"
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Windows"
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: no-cors
+Sec-Fetch-Dest: image
+Referer: https://demowebshop.tricentis.com/Themes/DefaultClean/Content/styles.css
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+Cookie: ARRAffinity=aeff9384aa58dd80a06097da55d76e7a00364bf1f86c5304e8c691754ded5177; __utma=78382081.298698979.1765354182.1765354182.1765354182.1; __utmc=78382081; __utmz=78382081.1765354182.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); __utmt=1; NOPCOMMERCE.AUTH=4A1EB87E749C7A991F46B189D877BFBEA846012A7BC89413EB3E5D9267D4D7D477629065F6BB79DC92FE026A23628A5C0854A93B319FDBD0B839DBB95CB8E7C604F6E73CC741094FF3310D77A76FCE53C777CF7896B314BA8504974255D9346EF5B81845B03C8A14736FE8F26945B7DC97CAA4215A73EA29FF683B3BFE09CDDB; Nop.customer=45596bde-5372-47ca-8c87-b6b2fa28f978; __utmb=78382081.3.10.1765354182
+

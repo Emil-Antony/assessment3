@@ -1,0 +1,9 @@
+Start auto log messages stack - Iteration 6.	[MsgId: MMSG-10545]
+Register.c(11): Found resource "https://demowebshop.tricentis.com/content/images/thumbs/0000201_build-your-own-expensive-computer_125.jpeg" in HTML "https://demowebshop.tricentis.com/"  	[MsgId: MMSG-26659]
+Register.c(11): Found resource "https://demowebshop.tricentis.com/content/images/thumbs/0000204_simple-computer_125.jpeg" in HTML "https://demowebshop.tricentis.com/"  	[MsgId: MMSG-26659]
+Register.c(11): web_url("demowebshop.tricentis.com") was successful, 682413 body bytes, 10376 header bytes  	[MsgId: MMSG-26386]
+Register.c(31): web_link("Register") started  	[MsgId: MMSG-26355]
+Register.c(31): Linking to "https://demowebshop.tricentis.com/register", Target Frame=""  	[MsgId: MMSG-27994]
+Register.c(31): Error -27721: Step download timeout (120 seconds) has expired when downloading resource "https://demowebshop.tricentis.com/register"  	[MsgId: MERR-27721]
+End auto log messages stack.	[MsgId: MMSG-10544]
+

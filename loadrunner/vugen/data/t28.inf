@@ -1,0 +1,15 @@
+[t28]
+FileName1=t28.htm
+URL1=https://demowebshop.tricentis.com/onepagecheckout
+Total=3
+RequestHeaderFile=t28_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t28_ResponseHeader.txt
+ContentType=text/html
+SnapshotXmlFile=snapshot_28.xml
+FileName2=t28_public.accordion.html
+URL2=https://demowebshop.tricentis.com/Scripts/public.accordion.js
+FileName3=t28_public.onepagecheckout.html
+URL3=https://demowebshop.tricentis.com/Scripts/public.onepagecheckout.js
+[ProtocolInfo]
+ProtocolId=QTWeb

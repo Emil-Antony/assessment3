@@ -1,0 +1,15 @@
+[t75]
+FileName1=t75.htm
+URL1=https://demowebshop.tricentis.com/
+Total=3
+RequestHeaderFile=t75_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t75_ResponseHeader.txt
+ContentType=text/html
+SnapshotXmlFile=snapshot_75.xml
+FileName2=t75_arrows.png
+URL2=https://demowebshop.tricentis.com/Plugins/Widgets.NivoSlider/Content/nivoslider/themes/default/arrows.png
+FileName3=t75_bullets.png
+URL3=https://demowebshop.tricentis.com/Plugins/Widgets.NivoSlider/Content/nivoslider/themes/default/bullets.png
+[ProtocolInfo]
+ProtocolId=QTWeb
